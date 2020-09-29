@@ -1,4 +1,4 @@
-##1-8 
+##1-8 Fragnent와 기타 팁들
     >1. 
     >><React.Fragment>를 사용하면 render() 안에 쓸 데 없는 <div>를 없앨 수 있다.
     >>babel2를 설치하면 더 간단힌 <>로만으로도 쓸 수 있음.
@@ -7,7 +7,7 @@
     >3. 
     >>super, constructor 굳이 안 써도 됨.
 
-##1-9
+##1-9 함수형 setState
     >1.
     >>setState안에 화살표 함수를 이용해서 return를 넣을 수 있다.
     >>이렇게 하는 이유는 setState를 여러 번 쓸 때 변수가 제대로 반영안될 수 있음. 

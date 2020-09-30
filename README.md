@@ -27,3 +27,9 @@
 >> 아무튼 그래서 render()를 너무 많이 하면 느려짐. 
 > 3. 
 >> ref에 있는 것도 밖에 뺄 수 있다. 
+
+### 2rkd
+## 2-1 React Hooks 사용하기
+> 1.
+>> Hooks가 별건 아니고 기존에 class 형식이였던 걸 함수 컨퍼넌트(const)로 바꾸고 거기서 setState나 ref 기능 같은 걸 추가해 준 것이다.
+>> 여기서 바뀐 것은 setState가 선언은 useState 값을 바꾸는 건 setState로 바뀌고 ref는 useRef를 써야하고 this.state가 안 들어 간다. 

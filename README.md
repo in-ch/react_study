@@ -82,3 +82,8 @@
 >> babel 안 깔았었다. npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader 라고 해서 babel 깔아 줘야함 
 > 3.
 >> babel 까지 깔았으면 이제 webpack.config.js에 module: {.... 생략 } 이라고 설정해 줘야함..
+
+## 2-6 구구단 웹팩으로 빌드하기 
+> 1. 
+>> 이제 return 부분에 <></>로 묶어 줄 수 있다.
+>> React.Fragment 쓸 필요가 없어 졌다. 

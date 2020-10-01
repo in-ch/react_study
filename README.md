@@ -72,3 +72,13 @@
 >> 가 들어 가야 한다.
 > 2.
 >> 이제 webpack을 설정하고 터미널에 webpack이라고 명령어를 치면 entry에 있는 파일들을 합쳐 준다.
+
+## 2-5 웹팩으로 빌드하기
+> 1.
+>> 원래 webpack이라고 명령어 치면 webpack이 빌드해줘야 하는데 명령어 등록이 안되어 있다.
+>> 그래서 package.json 파일에 스크립트로써 등록을 해줘서 webpack이 실행할 수 있도록 한다. npm run dev
+>> 혹은 npx webpack 이란 명령어를 쓸 수 있음.
+> 2.
+>> babel 안 깔았었다. npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader 라고 해서 babel 깔아 줘야함 
+> 3.
+>> babel 까지 깔았으면 이제 webpack.config.js에 module: {.... 생략 } 이라고 설정해 줘야함..

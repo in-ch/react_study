@@ -33,3 +33,15 @@
 > 1.
 >> Hooks가 별건 아니고 기존에 class 형식이였던 걸 함수 컨퍼넌트(const)로 바꾸고 거기서 setState나 ref 기능 같은 걸 추가해 준 것이다.
 >> 여기서 바뀐 것은 setState가 선언은 useState 값을 바꾸는 건 setState로 바뀌고 ref는 useRef를 써야하고 this.state가 안 들어 간다. 
+
+## 2-2 class와 hooks 비교하기
+> 1.
+>> 둘의 취향 차이인데 react는 hooks를 더 권장한다.
+> 2.
+>> hooks는 state가 바뀌면 함수 자체가 다시 실행되기 때문에 좀 더 느릴 수 있다. 
+>> class는 랜더 함수만 다시 실행됨. 
+> 3. 
+>> react에서는 class를 못씀..  class 대신에 className을 써야함 
+>> label의 for도 htmlFor를 써야함 
+> 4.
+>> hooks 버전에서도 prevState 쓸 수 있다. 

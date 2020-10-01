@@ -87,3 +87,9 @@
 > 1. 
 >> 이제 return 부분에 <></>로 묶어 줄 수 있다.
 >> React.Fragment 쓸 필요가 없어 졌다. 
+
+## 2-7 @babel.preset-env와 plugins 
+> 1.
+>> preset이란 plugin들의 모음이다. 
+> 2. 
+>> 그래서 preset에 설정을 적용하고 싶다면 presets를 배열로 바꾸면 된다. => webpack.config.js 확인

@@ -97,3 +97,9 @@
 ## 2-8 끝말잇기 Class 만들기 
 
 ## 2-9 webpack dev-server와 hot-loader 
+> 1. 
+>> npm i -D webpack-dev-server와 npm i -D react-hot-loader를 해준다. 
+> 2. 
+>> client.jsx 파일에서 hot이 새로 불러와서 컨포넌트를 관리(?)할 수 있다.
+>> webpack.config.js에서도 옵션에 plugin에 추가해줘야한다. 
+>> index.html에서 ./dist/app.js를 ./app.js로 해야 실시간 반영이 제대로 된다.

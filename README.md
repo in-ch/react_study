@@ -1,4 +1,4 @@
-### 1강 
+# 1강 
 ## 1-8 Fragnent와 기타 팁들
 > 1. 
 >> <React.Fragment>를 사용하면 render() 안에 쓸 데 없는 <div>를 없앨 수 있다.
@@ -28,7 +28,7 @@
 > 3. 
 >> ref에 있는 것도 밖에 뺄 수 있다. 
 
-### 2rkd
+# 2강
 ## 2-1 React Hooks 사용하기
 > 1.
 >> Hooks가 별건 아니고 기존에 class 형식이였던 걸 함수 컨퍼넌트(const)로 바꾸고 거기서 setState나 ref 기능 같은 걸 추가해 준 것이다.
@@ -45,3 +45,18 @@
 >> label의 for도 htmlFor를 써야함 
 > 4.
 >> hooks 버전에서도 prevState 쓸 수 있다. 
+
+## 2-3 웹팩 설치하기
+> 1. 
+>> 웹팩을 왜 쓸까? 컨퍼넌트 관리를 위해
+>> js파일을 하나의 js로 만드는 것 
+> 2.
+>> node는 js 실행기 그 이상도 이하도 아니다..
+> 3. 
+>> npm i react react-dom
+>> npm i -D webpack webpack-cli 
+>> 여기서 -D는 웹팩은 개발할 때 필요하고 배포 버전에서는 크게 필요가 없기 때문에 개발모드로 설치하는 것이다. 
+> 4.
+>> webpack.config.js와 client.jsx 파일 생성 
+> 5.
+>> 나중에는 create react app 하면 됨.

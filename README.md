@@ -93,3 +93,7 @@
 >> preset이란 plugin들의 모음이다. 
 > 2. 
 >> 그래서 preset에 설정을 적용하고 싶다면 presets를 배열로 바꾸면 된다. => webpack.config.js 확인
+
+## 2-8 끝말잇기 Class 만들기 
+
+## 2-9 webpack dev-server와 hot-loader 

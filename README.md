@@ -60,3 +60,15 @@
 >> webpack.config.js와 client.jsx 파일 생성 
 > 5.
 >> 나중에는 create react app 하면 됨.
+
+## 2-4 모듈 시스템과 웹팩 설정
+> 1.
+>> client.jsx에 render() 함수가 들어갈 수 있다. 그런데 여기서 컴포넌트들을 다 적으면 너무 길어 지니
+>> Component 파일을 따로 빼놓을 수 있고 대신 새로 작성한 Component 파일들에는 
+>> 앞에 
+>> <code>const React = require('react');const { Component } = React;</code>
+>> 뒤에
+>> <code>module.exports = GuGuDan;</code>
+>> 가 들어 가야 한다.
+> 2.
+>> 이제 webpack을 설정하고 터미널에 webpack이라고 명령어를 치면 entry에 있는 파일들을 합쳐 준다.

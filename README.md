@@ -28,11 +28,15 @@
 > 3. 
 >> ref에 있는 것도 밖에 뺄 수 있다. 
 
+<hr><hr>
+
 # 2강
 ## 2-1 React Hooks 사용하기
 > 1.
 >> Hooks가 별건 아니고 기존에 class 형식이였던 걸 함수 컨퍼넌트(const)로 바꾸고 거기서 setState나 ref 기능 같은 걸 추가해 준 것이다.
 >> 여기서 바뀐 것은 setState가 선언은 useState 값을 바꾸는 건 setState로 바뀌고 ref는 useRef를 써야하고 this.state가 안 들어 간다. 
+
+<hr>
 
 ## 2-2 class와 hooks 비교하기
 > 1.
@@ -45,6 +49,8 @@
 >> label의 for도 htmlFor를 써야함 
 > 4.
 >> hooks 버전에서도 prevState 쓸 수 있다. 
+
+<hr>
 
 ## 2-3 웹팩 설치하기
 > 1. 
@@ -61,6 +67,8 @@
 > 5.
 >> 나중에는 create react app 하면 됨.
 
+<hr>
+
 ## 2-4 모듈 시스템과 웹팩 설정
 > 1.
 >> client.jsx에 render() 함수가 들어갈 수 있다. 그런데 여기서 컴포넌트들을 다 적으면 너무 길어 지니
@@ -73,6 +81,8 @@
 > 2.
 >> 이제 webpack을 설정하고 터미널에 webpack이라고 명령어를 치면 entry에 있는 파일들을 합쳐 준다.
 
+<hr>
+
 ## 2-5 웹팩으로 빌드하기
 > 1.
 >> 원래 webpack이라고 명령어 치면 webpack이 빌드해줘야 하는데 명령어 등록이 안되어 있다.
@@ -83,10 +93,14 @@
 > 3.
 >> babel 까지 깔았으면 이제 webpack.config.js에 module: {.... 생략 } 이라고 설정해 줘야함..
 
+<hr>
+
 ## 2-6 구구단 웹팩으로 빌드하기 
 > 1. 
 >> 이제 return 부분에 <></>로 묶어 줄 수 있다.
 >> React.Fragment 쓸 필요가 없어 졌다. 
+
+<hr>
 
 ## 2-7 @babel.preset-env와 plugins 
 > 1.
@@ -94,7 +108,11 @@
 > 2. 
 >> 그래서 preset에 설정을 적용하고 싶다면 presets를 배열로 바꾸면 된다. => webpack.config.js 확인
 
+<hr>
+
 ## 2-8 끝말잇기 Class 만들기 
+
+<hr>
 
 ## 2-9 webpack dev-server와 hot-loader 
 > 1. 
@@ -103,3 +121,19 @@
 >> client.jsx 파일에서 hot이 새로 불러와서 컨포넌트를 관리(?)할 수 있다.
 >> webpack.config.js에서도 옵션에 plugin에 추가해줘야한다. 
 >> index.html에서 ./dist/app.js를 ./app.js로 해야 실시간 반영이 제대로 된다.
+
+<hr><hr>
+
+# 3강
+## import와 require 
+> 1. 
+>> require는 모듈화한 것을 (우리가 만든 것도, 외부에서 만든 것도) 가져올 수 있다.
+>> 보통 우리가 쓸 때는 import가 많이 쓸 일은 없긴 한데 보통 외부에서 만든 코드는 import도 지원하고 있다. 
+>> <code>import React from 'react';</code>
+>> <code>import React, { Component } from 'react'</code>;
+>> 여기서 {} 안에 쌓여 있는 것은 구조 분해 문법인데 
+>> 그냥 import는 <code>export default NumberBaseball</code>과 같고, {}는 
+>> <code>export const hello = 'hello'</code>와 같다. 
+> 2.
+>> 이렇게 쓸 수 있는 이유는 babel이 import를 require로 바꿔 주기 때문이다. 
+

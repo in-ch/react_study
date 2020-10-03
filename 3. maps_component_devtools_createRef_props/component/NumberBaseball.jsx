@@ -1,35 +1,33 @@
-//const React = require('react');
-//const { useState, useRef, Component } = React;
+const React = require('react');
+const { useState, useRef, Component } = React;
 
-import React, { Component } from 'react';
 
 function getNumbers() {
     // 숫자 4개를 랜덤하게 겹치지 않게 뽑는 함수
 }
 
-class NumberBaseball extends Component {
-    state = {
-        result: '',
-        value: '',
-        anwser: getNumbers(),
-        try: [],
-    };
-    onSubmitForm = () => {
+const NumberBaseball = () => {
+    const [result, setResult] = useState('');
+    const [value, setValue] = useState('');
+    const [anwser, setAnwser] = useState(getNumbers());
+    const [tried, setTried] = useState([]);
+    const inputRef = useRef(null);
+
+    const onSubmitForm = () => {
 
     };
 
-    onChangeInput = () => {
+    const onChangeInput = () => {
 
     };
 
-    render() {
-        return (
+    return (
             <>
-                <h1>{this.state.result}</h1>
-                <form onSubmit= {this.onSubmitForm}>
-                    <input maxlength= {4} value= {this.state.value} onChange= {this.onChangeInput} />
+                <h1>{result}</h1>
+                <form onSubmit= {onSubmitForm}>
+                    <input ref={inputRef} maxlength= {4} value= {value} onChange= {onChangeInput} />
                 </form>
-                <div>시도: {this.state.try.length}</div>
+                <div>시도: {tried.length}</div>
                 <ul>
                     {['','','','',''].map(()=> {
                         return (
@@ -39,7 +37,5 @@ class NumberBaseball extends Component {
                 </ul>
             </>
         )
-    }
 }
-
-export default NumberBaseball;
+module.exports = NumberBaseball;

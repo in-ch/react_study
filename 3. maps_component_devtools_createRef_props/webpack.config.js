@@ -35,7 +35,7 @@ module.exports = {
         new webpack.LoaderOptionsPlugin({ debug: true }),
     ],
     output: {
-        path: path.join(__dirname, 'dist'), // 경로를 알아서 합쳐줌
+        path: path.join(__dirname, './dist'), // 경로를 알아서 합쳐줌
         filename: 'app.js'
     } // 출력
 };

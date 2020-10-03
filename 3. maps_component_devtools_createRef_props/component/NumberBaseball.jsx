@@ -25,13 +25,22 @@ const NumberBaseball = () => {
             <>
                 <h1>{result}</h1>
                 <form onSubmit= {onSubmitForm}>
-                    <input ref={inputRef} maxlength= {4} value= {value} onChange= {onChangeInput} />
+                    <input ref={inputRef} maxLength='4' value= {value} onChange= {onChangeInput} />
                 </form>
                 <div>시도: {tried.length}</div>
                 <ul>
-                    {['','','','',''].map(()=> {
-                        return (
-                            <li>like</li>
+                    {[
+                        ['사과','맛있다'],
+                        ['바나나','밋앖디'],
+                        ['포도','시다'],
+                        ['귤','시다'],
+                        ['감','시러'],
+                        ['까마귀','날다'],
+                        ['배','떨어진다'],
+                        {fruit: '사과', taste: '맛있다.'}  
+                    ].map((v,i)=> {
+                        return (  // return 생략 가능
+                            <li key= {v[0]+v[1]}><b>{v[0]}</b> - <b>{v[1]} - {i}</b></li>
                         );
                     })}
                 </ul>

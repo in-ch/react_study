@@ -1,6 +1,6 @@
 const React = require('react');
 const { useState, useRef, Component } = React;
-
+const Try = require('./Try');
 
 function getNumbers() {
     // 숫자 4개를 랜덤하게 겹치지 않게 뽑는 함수
@@ -40,7 +40,7 @@ const NumberBaseball = () => {
                         {fruit: '사과', taste: '맛있다.'}  
                     ].map((v,i)=> {
                         return (  // return 생략 가능
-                            <li key= {v[0]+v[1]}><b>{v[0]}</b> - <b>{v[1]} - {i}</b></li>
+                            <Try v={v} i={i} />
                         );
                     })}
                 </ul>

@@ -4,6 +4,13 @@ const Try = require('./Try');
 
 function getNumbers() {
     // 숫자 4개를 랜덤하게 겹치지 않게 뽑는 함수
+    const candidate = [1,2,3,4,5,6,7,8,9];
+    const array = [];
+    for (let i =0; i < 4; i+=1) {
+        const chosen = candidate.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
+        array.push(chosen);
+    }
+    return array;
 }
 
 const NumberBaseball = () => {
@@ -13,12 +20,42 @@ const NumberBaseball = () => {
     const [tried, setTried] = useState([]);
     const inputRef = useRef(null);
 
-    const onSubmitForm = () => {
-
+    const onSubmitForm = (e) => {
+        e.preventDefault();
+        if(value === anwser.join('')) {
+            setResult('홈런 !');
+            setTried([...tried, { try: value, result: '홈런' }]);
+            alert('게임을 다시 시작합니다.');
+            setValue('');
+            setAnwser('');
+            setTried([]);
+        } else {
+            const answerArray = value.split('').map((v) => parseInt(v));
+            let strike = 0;
+            let ball = 0;
+            if(tried.length >= 9) {
+                setResult(`10번 이상 틀려 실패, 답은 ${answer.join(',')}이였습니다.`);
+                alert('게임을 다시 시작합니다.');
+                setValue('');
+                setAnwser('');
+                setTried([]);
+            } else {
+                for (let i =0; i < 4; i+=1){
+                    if(anwserArray[i] === answer[i]){
+                        stried += 1;
+                    } else if(answer.includes(anwserArray[i]))
+                    {
+                        ball += 1;
+                    }
+                }
+                setTried([...tried, { try: value, result: `${strike} 스트라이크, ${ball} 볼입니다.` }]);
+                setValue('');
+            }
+        }
     };
 
-    const onChangeInput = () => {
-
+    const onChangeInput = (e) => {
+        setValue(e.target.value);
     };
 
     return (
@@ -29,18 +66,9 @@ const NumberBaseball = () => {
                 </form>
                 <div>시도: {tried.length}</div>
                 <ul>
-                    {[
-                        ['사과','맛있다'],
-                        ['바나나','밋앖디'],
-                        ['포도','시다'],
-                        ['귤','시다'],
-                        ['감','시러'],
-                        ['까마귀','날다'],
-                        ['배','떨어진다'],
-                        {fruit: '사과', taste: '맛있다.'}  
-                    ].map((v,i)=> {
+                    {tried.map((v,i)=> {
                         return (  // return 생략 가능
-                            <Try key={v.fruit + v.taste} v={v} i={i} />
+                            <Try key={`${i + 1}차 시도 :`} tryInfo={v} />
                         );
                     })}
                 </ul>

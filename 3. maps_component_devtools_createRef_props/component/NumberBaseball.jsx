@@ -13,42 +13,50 @@ function getNumbers() {
     return array;
 }
 
+
+
+
 const NumberBaseball = () => {
     const [result, setResult] = useState('');
     const [value, setValue] = useState('');
     const [anwser, setAnwser] = useState(getNumbers());
-    const [tried, setTried] = useState([]);
+    const [tries, setTries] = useState([]);
     const inputRef = useRef(null);
 
     const onSubmitForm = (e) => {
         e.preventDefault();
         if(value === anwser.join('')) {
             setResult('홈런 !');
-            setTried([...tried, { try: value, result: '홈런' }]);
+            setTries((prevTries) => {
+                return [...prevTries, { try: value, result: '홈런' }];
+            });
             alert('게임을 다시 시작합니다.');
             setValue('');
-            setAnwser('');
-            setTried([]);
+            setAnwser(getNumbers());
+            setTries([]);
         } else {
             const answerArray = value.split('').map((v) => parseInt(v));
             let strike = 0;
             let ball = 0;
-            if(tried.length >= 9) {
+            if(tries.length >= 9) {
                 setResult(`10번 이상 틀려 실패, 답은 ${answer.join(',')}이였습니다.`);
                 alert('게임을 다시 시작합니다.');
                 setValue('');
-                setAnwser('');
-                setTried([]);
+                setAnwser(getNumbers());
+                setTries([]);
             } else {
                 for (let i =0; i < 4; i+=1){
-                    if(anwserArray[i] === answer[i]){
-                        stried += 1;
+                    
+                    if(answerArray[i] === answer[i]){
+                        strike += 1;
                     } else if(answer.includes(anwserArray[i]))
                     {
                         ball += 1;
                     }
                 }
-                setTried([...tried, { try: value, result: `${strike} 스트라이크, ${ball} 볼입니다.` }]);
+                setTries((prevTries) => {
+                    return [...prevTries, { try: value, result: `${strike} 스트라이크, ${ball} 볼입니다.` }];
+                });
                 setValue('');
             }
         }
@@ -64,9 +72,9 @@ const NumberBaseball = () => {
                 <form onSubmit= {onSubmitForm}>
                     <input ref={inputRef} maxLength='4' value= {value} onChange= {onChangeInput} />
                 </form>
-                <div>시도: {tried.length}</div>
+                <div>시도: {tries.length}</div>
                 <ul>
-                    {tried.map((v,i)=> {
+                    {tries.map((v,i)=> {
                         return (  // return 생략 가능
                             <Try key={`${i + 1}차 시도 :`} tryInfo={v} />
                         );

@@ -1,6 +1,6 @@
 const React = require('react');
 
-const Try = (tryInfo) => {
+const Try = ({tryInfo}) => {
     return (
         <>
             <li>

@@ -40,7 +40,7 @@ const NumberBaseball = () => {
                         {fruit: '사과', taste: '맛있다.'}  
                     ].map((v,i)=> {
                         return (  // return 생략 가능
-                            <Try v={v} i={i} />
+                            <Try key={v.fruit + v.taste} v={v} i={i} />
                         );
                     })}
                 </ul>

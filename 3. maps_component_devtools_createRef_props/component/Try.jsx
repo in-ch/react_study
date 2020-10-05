@@ -1,9 +1,8 @@
 const React = require('react');
-const { useState, useRef, Component } = React;
 
 const Try = (tryInfo) => {
     return (
-        <li key={tryInfo.v + 12412}>
+        <li>
             <div>
                 {tryInfo.v}
             </div>

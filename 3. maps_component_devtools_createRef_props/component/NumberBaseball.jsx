@@ -19,20 +19,20 @@ function getNumbers() {
 const NumberBaseball = () => {
     const [result, setResult] = useState('');
     const [value, setValue] = useState('');
-    const [anwser, setAnwser] = useState(getNumbers());
+    const [answer, setAnswer] = useState(getNumbers());
     const [tries, setTries] = useState([]);
     const inputRef = useRef(null);
 
     const onSubmitForm = (e) => {
         e.preventDefault();
-        if(value === anwser.join('')) {
+        if(value === answer.join('')) {
             setResult('홈런 !');
             setTries((prevTries) => {
                 return [...prevTries, { try: value, result: '홈런' }];
             });
-            alert('게임을 다시 시작합니다.');
+            alert('정답입니다. 게임을 다시 시작합니다.');
             setValue('');
-            setAnwser(getNumbers());
+            setAnswer(getNumbers());
             setTries([]);
         } else {
             const answerArray = value.split('').map((v) => parseInt(v));
@@ -42,14 +42,14 @@ const NumberBaseball = () => {
                 setResult(`10번 이상 틀려 실패, 답은 ${answer.join(',')}이였습니다.`);
                 alert('게임을 다시 시작합니다.');
                 setValue('');
-                setAnwser(getNumbers());
+                setAnswer(getNumbers());
                 setTries([]);
             } else {
                 for (let i =0; i < 4; i+=1){
                     
                     if(answerArray[i] === answer[i]){
                         strike += 1;
-                    } else if(answer.includes(anwserArray[i]))
+                    } else if(answer.includes(answerArray[i]))
                     {
                         ball += 1;
                     }

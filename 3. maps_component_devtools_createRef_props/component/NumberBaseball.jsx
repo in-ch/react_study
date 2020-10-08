@@ -15,8 +15,6 @@ function getNumbers() {
     return array;
 }
 
-
-
 const NumberBaseball = () => {
     const [result, setResult] = useState('');
     const [value, setValue] = useState('');

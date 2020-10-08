@@ -171,3 +171,14 @@
 > 2. 
 >> state를 바꾼 적이 없는데, 랜더링이 될까?  > 랜더링이 된다...
 >> 그럴 때는 sholudComponentUpdate 메소드를 통해서 언제 랜더링될 지 알려줘야 한다.
+
+## 3-11 PureCompoent
+> 1. 
+>> 만약 위의 방법이 어렵다고 한다면 다음과 같이 하면 된다. 
+>> <code>class Test extends PureComponent</code>
+>> 이러면 should... 이런 거 안해도 자동으로 랜더링 안된다. 
+>> 대신에 참조가 많이 들어가게 되면 좀 버벅거리고 어려워함.
+>> array에서 push같은 거 쓰면 안됨.. array: [...this.state.array, 1]; 이거 써야함..
+> 2. 
+>> Hooks에서는 memo라는 게 있다. 
+>> 근데 해 보니깐 안된다.. 찾아보니 useMemo라는 게 있는 것 같긴 한데...

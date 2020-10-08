@@ -1,6 +1,8 @@
 const React = require('react');
 const { useState, useRef, Component } = React;
 const Try = require('./Try');
+const Tests = require('./ShouldComponentUpdate');
+
 
 function getNumbers() {
     // 숫자 4개를 랜덤하게 겹치지 않게 뽑는 함수
@@ -12,7 +14,6 @@ function getNumbers() {
     }
     return array;
 }
-
 
 
 
@@ -80,6 +81,7 @@ const NumberBaseball = () => {
                         );
                     })}
                 </ul>
+                <Tests />
             </>
         )
 }

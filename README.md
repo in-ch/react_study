@@ -154,3 +154,10 @@
 >> 그래서 배열을 넣을려면 새로운 배열을 만들어서 넣어야 한다.
 >> <code>const array2 = [...array, 2]</code>
 >> 그리고 이때 꼭 prevState 써야 한다.
+
+## 3-9 React Devtools 
+> 1.
+>> props를 많이 쓰다보면 런더링이 자주 일어나 오류가 발생할 수 있다. 이것을 찾을 수 있는게 devtools
+> 2.
+>> 크롬 확장프로그램에서 React devtools 설치하면 된다. 
+>> React Elements 들어가고 거기서 컴포넌트 확인해 보면 부모로 받은 props 까지 확인해 볼 수 있다. 

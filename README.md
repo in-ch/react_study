@@ -211,3 +211,7 @@
 ## 4-5 return 내부에 for와 if 쓰기
 > 1. 
 >> 굉장히 길다... 걍 쓰지 말자..
+
+## 5-1 리액트 라이프사이클 소개
+> 1.
+>> 클래스의 경우 -> construector -> render -> ref -> compoentDidMount -> setState/props -> shouldComponentUpdate(true) -> render -> componentDidUpdate -> compoentWillUnmount -> 소멸

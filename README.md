@@ -229,3 +229,19 @@
 >> 메소드 넣을 때 매개변수를 render부분에 넣지 말고 (e)부분을 따로 빼서 
 >> <code>onClickBtn = (choice) => (e) => { ..... } </code>
 >> 이렇게 만들 수 있다. 
+
+# 5-5 Hooks로 전환하기
+> 1.
+>> 훅스는 라이프사이클이 없지만 흉내를 낼 수 있다.
+>> 따라서 useEffect()라는 것을 써야함
+>> <code>
+    useEffect(() => {
+        // componentDidMount, componentDidUpdate 역할 (1대1 대응은 아님, 둘의 기능을 합쳐 놓은 것과 같음.)
+        interval.current = setInterval(() => {
+            changeHand();
+        }, 100)
+        return () => { // componentWillUnmount 역할
+            clearInterval(interval.current);
+        }
+    },[imgCoord]);  // 배열에 바뀌는 변수 적어줘야함, 안 넣으면 처음만 실행되고 실행이 되지 않음.
+</code>

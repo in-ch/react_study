@@ -17,7 +17,7 @@ const scores = {
 
 const computerChoice = (imgCoord) => {
     return Object.entries(rspCoords).find(function(v) {
-      return v[1] === imgCoord;
+      return v[1] === imgCoord; 
     })[0];
   };
 

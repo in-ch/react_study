@@ -215,3 +215,17 @@
 ## 5-1 리액트 라이프사이클 소개
 > 1.
 >> 클래스의 경우 -> construector -> render -> ref -> compoentDidMount -> setState/props -> shouldComponentUpdate(true) -> render -> componentDidUpdate -> compoentWillUnmount -> 소멸
+
+## 5-2 setInterval과 라이프사이클 연동하기
+> 1.
+>> 처음 랜더링되면 componentDidMount()에 setInterval()같은 거 넣으면 되는데, 다만 컴퍼넌트가 사라졌을 때 setInterval()을 없애줄 게 필요하다. 
+> 2.
+>> setInterval 너무 많이 하면 메모리 너무 많이 먹어서 터지는데, 이것을 메모리 누수라고 한다.
+> 3.
+>> 비동기 함수가 바깥에 있는 함수를 참조하면 클로져 현상이 발생함.
+
+# 5-4 고차 함수
+> 1. 
+>> 메소드 넣을 때 매개변수를 render부분에 넣지 말고 (e)부분을 따로 빼서 
+>> <code>onClickBtn = (choice) => (e) => { ..... } </code>
+>> 이렇게 만들 수 있다. 

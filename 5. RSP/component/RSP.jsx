@@ -1,6 +1,14 @@
 const React = require('react');
 const { useState, useRef, Component } = React;
 
+let interval;
+
+const repCoords = {
+    바위: '0',
+    가위: '-142px',
+    보: '-284px',
+}
+
 const RSP = () => {
     const [result, setResult] = useState('');
     const [score, setScore] = useState(0);
@@ -8,16 +16,24 @@ const RSP = () => {
 
     const componentDidMount = () => {
         // 처음 랜더가 성공적으로 수행되면 실행할 수 있는 메소드 
+        interval = setInterval(() => {
+            let imgCoord = this.imgCoord;
+            console.log('asdf');
+        },1000);
     }
 
     const componentWillUnmount = () => {
         // 컴포넌트가 제거되기 직전
+        clearInterval(interval);
     }
 
     const componentDidUpdate = () => {
         // 재 렌더링 된 후
     }
 
+    const onClickBtn = (choice) => {
+
+    }
 
     return (
         <>

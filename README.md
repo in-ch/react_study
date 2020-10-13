@@ -269,3 +269,8 @@
 >> {redo &&<button onClick={onClickRedo}>한 번 더</button>}
 >> </code>
 >> 이거 쓰면 조건문 없이 간단하게 show 또는 unShow 할 수 있다. 
+
+## 6-4 useEffect로 업데이트하기
+> 1. 
+>> 다시 한 번 강조하지만 useEffect에 배열이 없으면 componentDidMount이고 
+>> 배열이 있으면 componentUnDidMount이다. 

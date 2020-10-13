@@ -1,6 +1,5 @@
-const { useEffect } = require('react');
+const { useEffect, useMemo, useRef, useCallback } = require('react');
 const React = require('react');
-const { useState, useRef, Component } = React;
 
 function getWinNumbers() {
     console.log('hello');
@@ -18,7 +17,8 @@ function getWinNumbers() {
 
 
 const Lotto = () => {
-    const [winNumbers, setWinNumbers] = setState(getWinNumbers);
+    const lottoNumbers = useMemo(() => getWinNumbers(), []);
+    const [winNumbers, setWinNumbers] = setState(lottoNumbers);
     const [winBalls, setWinBalls] = setState([]);
     const [bonus, setBonus] = setState(null);
     const [redo, setRedo] = setState(false);
@@ -47,7 +47,6 @@ const Lotto = () => {
     },[interval.current]);
 
     const onClickRedo = () => {
-        console.log('다시 시작')
         setWinNumbers(getWinNumbers());
         setWinBalls([]);
         setBonus(null);

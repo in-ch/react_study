@@ -274,3 +274,14 @@
 > 1. 
 >> 다시 한 번 강조하지만 useEffect에 배열이 없으면 componentDidMount이고 
 >> 배열이 있으면 componentUnDidMount이다. 
+
+## 6-5 useMemo와 useCallback 사용하기
+> 1. 
+>> 보면 getWinNumbers가 계속 실행되고 있다. 
+>> class에서는 안 그러는데 , Hooks는 코드 전체가 다시 실행되기 때문에 그렇다...
+>> useMemo를 사용하면 캐싱이 가능하다.
+>> useMemo는 그 함수의 리턴값을 기억하는 것이고 useCallback은 그 함수 자체를 기억하는 것이다.
+>> useMemo 좋은 게 메모리 과부화를 막아 줄 수 있다... 
+> 2.
+>> useCallback 같은 경우 자식 컴포넌트에 함수를 넣어 줄 떄는 그 함수에 useCallBack을 해 줘야함 
+>> 왜나하면 안해주면 매번 새로 랜더링을 해 버린다. 

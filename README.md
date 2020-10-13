@@ -256,8 +256,16 @@
 
 # 6강
 
-## 5-1 로또 추첨기 컴포넌트
+## 6-1 로또 추첨기 컴포넌트
 > 1.
 >> 보통 반복문을 기점으로 새로운 컴포넌트를 선언해(만들어) 준다
 >> {winBalls.map((v)=> <Ball key={v} number={v} />)} 
 >> 이거 익숙해 지자...
+
+## 6-2 setTimeout 여러 번 사용하기
+> 1.  
+>> <code>
+>> {bonus && <Ball number={bonus}/>}
+>> {redo &&<button onClick={onClickRedo}>한 번 더</button>}
+>> </code>
+>> 이거 쓰면 조건문 없이 간단하게 show 또는 unShow 할 수 있다. 

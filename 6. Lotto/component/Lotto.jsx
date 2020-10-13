@@ -17,11 +17,36 @@ function getWinNumbers() {
 }
 
 const Lotto = () => {
-    const [winNumberss, setWinNumbers] = setState(getWinNumbers);
+    const [winNumbers, setWinNumbers] = setState(getWinNumbers);
     const [winBalls, setWinBalls] = setState([]);
     const [bonus, setBonus] = setState(null);
     const [redo, setRedo] = setState(false);
-    
+    const interval = useRef();
+    const interval2 = useRef();
+
+    useEffect(() => {
+        for(let i=0;i < winNumbers.length -1;i++){
+            interval.current = setInterval(() => {
+                    setWinBalls((prevWinBalls) => {
+                        [...prevWinBalls,winNumbers[i]]
+                    });
+            }, (i+1)* 1000);
+        }
+
+        interval2.current = setInverval(() => {
+            setBonus(winNumbers[6]);
+            setRedo(true);
+        },7000);
+
+        return () => {
+            interval.current.forEach((v)=>{
+                clearInterval(v);
+            });
+            clearInterval(interval2.current);
+        }
+
+    },[winNumbers,bonus,redo,winBalls]);
+
     return (
         <>
             <div>
@@ -32,7 +57,7 @@ const Lotto = () => {
                 </div>
                 <p>보너스</p>
                 {bonus && <Ball number={bonus}/>}
-                <button onClick={redo ? this.onClickRedo : () => {}}>한 번 더 </button>
+                {redo &&<button onClick={onClickRedo}>한 번 더 </button>}
             </div>
         </>
     )

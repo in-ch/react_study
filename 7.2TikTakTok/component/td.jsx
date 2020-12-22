@@ -4,10 +4,8 @@ const { useState, useRef, Component } = React;
 const Td= () => {
 
     return (
-            <>
-                <Td>{''}</Td>
-            </>
+            <td>{''}</td>
         )
 }
 
-module.exports = Td;
+export default Td;

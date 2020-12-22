@@ -1,13 +1,14 @@
 const React = require('react');
 const { useState, useRef, Component } = React;
+import Tr from './Tr';
 
 const Table = () => {
 
     return (
-            <>
-                <Table>{''}</Table>
-            </>
+            <table>
+                <Tr>{''}</Tr>
+            </table>
         )
 }
 
-module.exports = Table;
+export default Table;

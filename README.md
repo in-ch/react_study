@@ -308,4 +308,9 @@
 >> 규모가 큰 프로젝트는 리덕스를 써야하고 소규모 앱에서는 useReducer를 어느 정도 커버할 수 있다. 
 >> 상위 컴포넌트의 데이터를 관리할 수 있게 하는 거임. (하위 컴포넌트에서 상위 컴포넌트에 접근할 수 있도록..)
 
+## 7-2 reducer, action, dispatch의 관계
+> 1. 
+>> 컴포넌트에 넣는 이벤트는 무조건 useCallback 해줘야 함.
+> 2. 
+>> dispatch는 action 객체를 만드는 것이고 action을 dispatch 할 때 마다 reducer가 실행됨.
 

@@ -1,13 +1,11 @@
 const React = require('react');
 const { useState, useRef, Component } = React;
-
+import Td from './Td';
 const Tr = () => {
 
     return (
-            <>
-                <Tr>{''}</Tr>
-            </>
+            <Td>{''}</Td>
         )
 }
 
-module.exports = Tr;
+export default Tr;

@@ -49,7 +49,7 @@ const Lotto = () => {
     // ajax는 보통 useEffect에서 일어나게 된다.
     // 근데 만약에 componentDidUpdate에서만 ajax를 실행하고 componentDidMount에서 실행하고 싶지 않다면...다음과 같이 하면 된다.
     
-    const mounted = useRef(fakse);
+    const mounted = useRef(false);
     useEffect(() => {
         if(!mounted.current){
             mounted.current = true;

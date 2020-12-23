@@ -1,11 +1,13 @@
 const React = require('react');
 const { useState, useRef, Component } = React;
 
-const Td= () => {
+const Td = () => {
 
     return (
-            <td>{''}</td>
+            <>
+                <td></td>
+            </>
         )
-}
+};
 
 export default Td;

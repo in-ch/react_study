@@ -13,7 +13,7 @@ module.exports = {
     }, // 입력
     module: { // 공식 모드에서는 loader이다. 
         rules: [{   // jsx 파일은 babel loader로 적용시키겠다.
-            test: /\.jsx?$/,
+            test: /\.(js|jsx|tsx|ts)?$/,
             loader: 'babel-loader',
             options: {
                 presets: [

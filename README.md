@@ -313,4 +313,6 @@
 >> 컴포넌트에 넣는 이벤트는 무조건 useCallback 해줘야 함.
 > 2. 
 >> dispatch는 action 객체를 만드는 것이고 action을 dispatch 할 때 마다 reducer가 실행됨.
-
+> 3.
+>> state는 아무도 손될 수 없는 영역이고, state를 수정하고 싶으면 우리는 action을 만들고 dispatch 시켜야 바꿀 수 있음.
+>> action을 어떻게 처리할 건지는 reducer에서 관리한다. 

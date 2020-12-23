@@ -1,9 +1,11 @@
-const React = require('react');
-const { useState, useRef, useReducer, useCallback, Component } = React;
-//import Table from './Table';
+import React from 'react';
 
-/* const initialState = {
-    winnder: '',
+const { useState, useRef, useReducer, useCallback, Component } = React;
+
+import Table from './Table';
+
+const initialState = {
+    winner: 'o',
     turn: '0',
     tableData: [['','',''],['','',''],['','','']],
 };
@@ -18,24 +20,27 @@ const reducer = (state, action) => {  // action을 dispatch 할 때 마다 reduc
             }
     }
 };
- */
+
 
  const TikTakTok = () => {
-    //const [winner, setWinnder] = useState('');
+    //const [winner, setWinner] = useState('');
     //const [turn, setTurn] = useState('0');
     //const [tableData, setTableData] = useState([['','',''],['','',''],['','','']]);
 
     const [state, dispatch] = useReducer(reducer, initialState);
-    
-    const onClickTable = useCallback(()=> {
-        dispatch({ type: 'SET_WINNER', winner: '0' }); //action 객체임.
-    }, []);
+ 
+    const onClickTable = useCallback(() => {
+        dispatch({ type: 'SET_WINNER', winner: '0'})  // dispatch 안에 있는 게 action 임 
+    });
 
     return (
             <>
-                <Table onClick={onClickTable}/>
-                {winnder && <div>{winnder}님의 승리</div>}
-            </>
+                <Table onClick={onClickTable} tableData={ state.tableData }/>
+               {
+                 state.winner && <div>{state.winner}님의 승리</div>
+               }
+                
+           </>
         )
 }
 

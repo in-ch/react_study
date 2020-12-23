@@ -1,10 +1,15 @@
 const React = require('react');
 const { useState, useRef, Component } = React;
 import Td from './Td';
-const Tr = () => {
+
+const Tr = ({ rowData }) => {
 
     return (
-            <Td>{''}</Td>
+            <tr>
+                {
+                    Array(rowData.length).fill().map((td) => (<Td>{''}</Td>))
+                }
+            </tr>
         )
 }
 

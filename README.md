@@ -316,3 +316,9 @@
 > 3.
 >> state는 아무도 손될 수 없는 영역이고, state를 수정하고 싶으면 우리는 action을 만들고 dispatch 시켜야 바꿀 수 있음.
 >> action을 어떻게 처리할 건지는 reducer에서 관리한다. 
+
+## 7-3 action 만들어 dispatch 하기
+> 1. 
+>> ... 은 얕은 복사이다. 예를 들어 const a = {b:1,c:2} 하고 const b = a; 하면 a === b가 되는데, const c = { ...a }; 하면 c === a 는 false 이다.
+> 2. 
+>> dispatch 너무 어렵다. 나중에 더 좋은 거 나옴... 컨텍스트 api 같은 거 ...

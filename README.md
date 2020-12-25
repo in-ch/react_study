@@ -346,3 +346,7 @@
 ## 8-1 Context API 소개와 지뢰찾기
 > 1.
 >> 부모와 자식 관계가 다층 관계일 때, reducer보다 context API 쓰면 더 편함.
+
+## 8-2 createContext와 provider
+> 1.
+>> provider로 감싸야 context가 접근 가능해진다.

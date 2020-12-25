@@ -338,3 +338,11 @@
 >> useEffect와 useRef를 활용해서 왜 죄다 랜더링 되는 지 확인해 볼 것이다.
 > 3. 
 >> memo로 감싸서 해결함
+
+<hr/>
+
+# 8강
+
+## 8-1 Context API 소개와 지뢰찾기
+> 1.
+>> 부모와 자식 관계가 다층 관계일 때, reducer보다 context API 쓰면 더 편함.

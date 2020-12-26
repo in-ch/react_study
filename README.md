@@ -350,3 +350,7 @@
 ## 8-2 createContext와 provider
 > 1.
 >> provider로 감싸야 context가 접근 가능해진다.
+
+## 8-3 useContext 사용해서 지뢰찾기 렌더링
+> 1.
+>> 후.. 에러 고치는 데 힘 다 씀.. 일단 컴포넌트에 값 props받을 때 (값) 말고 ({값})로 해서 받아야 하고 Appcontainer 안에 {} 만 들어가니깐 {{}}같은 거 절대 넣지 말자.

@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
+import React, { useContext } from 'react';
+import { TableContext } from './Mine';
+
+import Tr from './Tr';
 
 const  Table = () => {
-    const [row, setRow] = useState(10);
-    const [hor, setHor] = useState(10);
-    const [mine, setMine] = useState(20);
-
+    const { tableData } = useContext(TableContext);
     return (
-        <>
-        </>
+        <table>
+            {Array(tableData.length).fill().map((tr, i) => <Tr rowIndex={i} key={i} />)}
+        </table>
     );
 }
 

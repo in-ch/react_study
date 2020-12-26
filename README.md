@@ -364,3 +364,6 @@
 ## 9-1 React Router 도입하기
 > 1.
 >> react-router와 react-router-dom을 깔면 이제 쓸 수 있다.
+
+> 2.
+>> 단순히 <Route>썻다고 바로 페이지에 뜨는 건 아니고 a링크를 하나 만들어 줘야 하는데, react-router-dom에서 Link라는 걸 불러오고 <Link to='~'> 등을 통해서 페이지를 넘길 수 있음.

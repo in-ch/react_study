@@ -6,7 +6,7 @@ const router = () => {
   return (
     <BrowserRouter>
       <div>
-        <Route path="./4.reaction_velocity" component={ResponseCheck}></Route>
+        <Route path="/4.reaction_velocity" component={ResponseCheck}></Route>
       </div>
     </BrowserRouter>
   );

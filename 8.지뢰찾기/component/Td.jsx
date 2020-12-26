@@ -1,5 +1,5 @@
-import React, {useContext} from 'react';
-import {TableContext, CODE} from './Mine';
+import React, {useCallback, useContext} from 'react';
+import {TableContext, CODE, OPEN_CELL} from './Mine';
 
 const getTdStyle = (code) => {
     switch (code) {
@@ -31,10 +31,15 @@ const getTdText = (code) => {
 };
 
 const  Td = ({rowIndex, cellIndex}) => {
-
     const {tableData} = useContext(TableContext); 
+
+    const onClickTd = useCallback(() => {
+        dispatch({ type: OPEN_CELL, row: rowIndex, cell: cellIndex });
+        return;
+    }, [tableData[rowIndex][cellIndex]]);
+
     return (
-        <td style={getTdStyle(tableData[rowIndex][cellIndex])}>
+        <td onClick= {onClickTd} style={getTdStyle(tableData[rowIndex][cellIndex])}>
             {getTdText(tableData[rowIndex][cellIndex])}
         </td>
     );

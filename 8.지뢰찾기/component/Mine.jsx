@@ -15,7 +15,6 @@ export const CODE = {
   
   export const TableContext = createContext({
     tableData: [],
-    halted: true,
     dispatch: () => {},
   });
   
@@ -56,22 +55,26 @@ export const CODE = {
       const hor = shuffle[k] % cell;
       data[ver][hor] = CODE.MINE;
     }
-  
-    console.log(data);
     return data;
   };
   
 export const START_GAME = 'START_GAME';
+export const OPEN_CELL = 'OPEN_CELL';
 
 const reducer = (state, action) => {
 
     switch (action.type) {
         case START_GAME:
-
             return {
                 ...state,
                 tableData: plantMine(action.row, action.cell, action.mine),
             }
+        case OPEN_CELL: 
+            return {
+              ...state,
+              tableData,
+            }    
+        
         default:
             return state;
     }
@@ -83,7 +86,7 @@ const Mine = () => {
     const value = useMemo(() => ({ tableData, dispatch }), [tableData ]); //이렇게 contextAPI 쓸 때 캐싱처리 해야 성능 저하가 일어 나지 않는다.
 
     return (
-        <TableContext.Provider value= { value }>
+        <TableContext.Provider value = { value }>
             <Form />
             <div>{ timer}</div>
             <Table />
